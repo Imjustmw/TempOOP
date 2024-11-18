@@ -10,8 +10,8 @@ import java.lang.reflect.Modifier;;
 // Test ChatBot Class
 public class ChatBotTest extends ClassTest {
 
-    public ChatBotTest(String filePath, int totalScore) {
-        super(filePath, totalScore);
+    public ChatBotTest(String filePath, String clasName, int totalScore) {
+        super(filePath, clasName, totalScore);
     }
 
     @Override

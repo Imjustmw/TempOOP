@@ -1,6 +1,8 @@
 package autograder.assignments;
 
 import autograder.AssignmentTest;
+import autograder.assignments.assignment1.ChatBotGeneratorTest;
+import autograder.assignments.assignment1.ChatBotPlatformTest;
 import autograder.assignments.assignment1.ChatBotTest;
 import autograder.models.ClassTest;
 
@@ -19,9 +21,17 @@ public class Assignment1Test extends AssignmentTest {
     @Override
     protected void runUnitTests(String targetPath) {
         // Run unit tests for assignment 1
-        ClassTest chatBotTest = new ChatBotTest(targetPath, 36);
+        ClassTest chatBotTest = new ChatBotTest(targetPath, "ChatBot", 36);
         chatBotTest.run();
         chatBotTest.printResults();
+
+        ClassTest chatBotGenerator = new ChatBotGeneratorTest(targetPath, "ChatBotGenerator", 7);
+        chatBotGenerator.run();
+        chatBotGenerator.printResults();
+
+        ClassTest chatBotPlatform = new ChatBotPlatformTest(targetPath, "ChatBotPlatform", 20);
+        chatBotPlatform.run();
+        chatBotPlatform.printResults();
     }
 
     @Override

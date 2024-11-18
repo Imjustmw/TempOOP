@@ -18,4 +18,5 @@ public class TestResult {
 
     public int getScore() { return this.score; }
     public String getFeedback() { return this.feedback; }
+    public String getTestName() { return this.testName; }
 }

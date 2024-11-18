@@ -12,8 +12,8 @@ public abstract class ClassTest {
     protected List<TestResult> tests;
     private int totalScore;
 
-    public ClassTest(String filePath, int totalScore) {
-        this.classInstance = ClassLoader.loadClass(filePath, "ChatBot");
+    public ClassTest(String filePath, String className, int totalScore) {
+        this.classInstance = ClassLoader.loadClass(filePath, className);
         this.tests = new ArrayList<>();
         this.totalScore = totalScore;
     }
@@ -37,7 +37,8 @@ public abstract class ClassTest {
         }
         System.out.println("ChatBot Score: " + score + "/" + this.totalScore + "\nFeedback:");
         for (TestResult result: tests) {
-            System.out.print(result.getFeedback());
+            if (!result.getFeedback().isEmpty())
+                System.out.print(result.getTestName() + ": " + result.getFeedback());
         }
         
     }
