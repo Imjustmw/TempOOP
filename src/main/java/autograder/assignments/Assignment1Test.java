@@ -17,10 +17,11 @@ public class Assignment1Test extends AssignmentTest {
     }
 
     @Override
-    protected void runUnitTests() {
+    protected void runUnitTests(String targetPath) {
         // Run unit tests for assignment 1
-        ClassTest chatBotTest = new ChatBotTest(targetPath);
+        ClassTest chatBotTest = new ChatBotTest(targetPath, 36);
         chatBotTest.run();
+        chatBotTest.printResults();
     }
 
     @Override
@@ -28,7 +29,8 @@ public class Assignment1Test extends AssignmentTest {
         // Run Integration tests for assignment 1
     }
 
-    @Override void generateResults() {
+    @Override 
+    protected void generateResults() {
         // Generate PDF results for assignment 1
     }
 }

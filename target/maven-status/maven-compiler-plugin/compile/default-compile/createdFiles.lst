@@ -1,0 +1,10 @@
+autograder\AssignmentTestFactory.class
+autograder\assignments\Assignment1Test.class
+autograder\utils\FileCompiler.class
+autograder\models\TestResult.class
+autograder\utils\ClassLoader.class
+autograder\utils\FileExtractor.class
+autograder\assignments\assignment1\ChatBotTest.class
+autograder\App.class
+autograder\AssignmentTest.class
+autograder\models\ClassTest.class
