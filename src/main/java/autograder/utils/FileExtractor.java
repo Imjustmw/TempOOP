@@ -18,17 +18,20 @@ public class FileExtractor {
              ZipInputStream zis = new ZipInputStream(fis)) {
             ZipEntry entry;
             while ((entry = zis.getNextEntry()) != null) {
-                File extractedFile = new File(targetDirectory, entry.getName());
-                if (entry.isDirectory()) {
-                    extractedFile.mkdirs();
-                } else {
-                    extractedFile.getParentFile().mkdirs(); // Ensure parent directories exist
-                    try (FileOutputStream fos = new FileOutputStream(extractedFile)) {
-                        byte[] buffer = new byte[1024];
-                        int length;
-                        while ((length = zis.read(buffer)) > 0) {
-                            fos.write(buffer, 0, length);
-                        }
+                // Skip directories and non-Java files
+                if (entry.isDirectory() || !entry.getName().endsWith(".java") || entry.getName().contains("/")) {
+                    continue;
+                }
+
+                // Extract the .java file
+                File extractedFile = new File(targetDirectory, new File(entry.getName()).getName());
+                extractedFile.getParentFile().mkdirs(); // Ensure parent directories exist
+
+                try (FileOutputStream fos = new FileOutputStream(extractedFile)) {
+                    byte[] buffer = new byte[1024];
+                    int length;
+                    while ((length = zis.read(buffer)) > 0) {
+                        fos.write(buffer, 0, length);
                     }
                 }
                 zis.closeEntry();

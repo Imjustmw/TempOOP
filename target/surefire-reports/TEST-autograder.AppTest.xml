@@ -7,7 +7,7 @@
     <property name="java.specification.version" value="1.8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\jonny\Downloads\OOP-Project\autograder\target\test-classes;C:\Users\jonny\Downloads\OOP-Project\autograder\target\classes;C:\Users\jonny\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\jonny\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.class.path" value="C:\Users\jonny\Downloads\OOP-Project\autograder\target\test-classes;C:\Users\jonny\Downloads\OOP-Project\autograder\target\classes;C:\Users\jonny\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\jonny\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\jonny\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -18,8 +18,8 @@
     <property name="user.country" value="TT"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-1.8\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\jonny\AppData\Local\Temp\surefire2819423564744138686\surefirebooter4555889277995587684.jar C:\Users\jonny\AppData\Local\Temp\surefire2819423564744138686 2024-11-17T15-36-58_954-jvmRun1 surefire5814511386959400770tmp surefire_03822780203438387356tmp"/>
-    <property name="surefire.test.class.path" value="C:\Users\jonny\Downloads\OOP-Project\autograder\target\test-classes;C:\Users\jonny\Downloads\OOP-Project\autograder\target\classes;C:\Users\jonny\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\jonny\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.java.command" value="C:\Users\jonny\AppData\Local\Temp\surefire3576305244136334045\surefirebooter8941385805638746457.jar C:\Users\jonny\AppData\Local\Temp\surefire3576305244136334045 2024-11-19T09-07-35_882-jvmRun1 surefire1367036310871611583tmp surefire_06134565338478157960tmp"/>
+    <property name="surefire.test.class.path" value="C:\Users\jonny\Downloads\OOP-Project\autograder\target\test-classes;C:\Users\jonny\Downloads\OOP-Project\autograder\target\classes;C:\Users\jonny\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\jonny\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\jonny\.m2\repository\com\itextpdf\itextpdf\5.5.13.3\itextpdf-5.5.13.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\jonny"/>
     <property name="user.language" value="en"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\jonny\AppData\Local\Temp\surefire2819423564744138686\surefirebooter4555889277995587684.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\jonny\AppData\Local\Temp\surefire3576305244136334045\surefirebooter8941385805638746457.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk-1.8\jre\lib\resources.jar;C:\Program Files\Java\jdk-1.8\jre\lib\rt.jar;C:\Program Files\Java\jdk-1.8\jre\lib\jsse.jar;C:\Program Files\Java\jdk-1.8\jre\lib\jce.jar;C:\Program Files\Java\jdk-1.8\jre\lib\charsets.jar;C:\Program Files\Java\jdk-1.8\jre\lib\jfr.jar;C:\Program Files\Java\jdk-1.8\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -61,5 +61,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="autograder.AppTest" time="0"/>
+  <testcase name="shouldAnswerWithTrue" classname="autograder.AppTest" time="0.003"/>
 </testsuite>

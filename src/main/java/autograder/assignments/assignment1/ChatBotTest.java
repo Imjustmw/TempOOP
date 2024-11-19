@@ -240,7 +240,7 @@ public class ChatBotTest extends ClassTest {
 
             try {
                 // Test generateResponse 
-                Method generateResponse = super.classInstance.getMethod("generateResponse");
+                Method generateResponse = super.classInstance.getDeclaredMethod("generateResponse");
                 modifiers = generateResponse.getModifiers();
                 if (Modifier.isPrivate(modifiers)) {
                     methodTests.addScore(1);
@@ -290,9 +290,9 @@ public class ChatBotTest extends ClassTest {
                 // Test toString method
                 Method getNumResponsesGenerated = super.classInstance.getMethod("getNumResponsesGenerated");
                 Method toString = super.classInstance.getMethod("toString");
-                String response = (((String) toString.invoke(instance)).toLowerCase()).replaceAll("\\s+", "");
-                String has1 = ("ChatBotName:" + getChatBotName.invoke(instance)).toLowerCase();
-                String has2 = ("NumberofMessagesUsed:" + getNumResponsesGenerated.invoke(instance)).toLowerCase();
+                String response = (String) toString.invoke(instance);
+                String has1 = (String) getChatBotName.invoke(instance);
+                String has2 = "" +  (int) getNumResponsesGenerated.invoke(instance);
                 if (response.contains(has1) && response.contains(has2)) {
                     methodTests.addScore(4);
 

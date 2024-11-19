@@ -1,19 +1,16 @@
 package autograder;
 
+import autograder.models.Student;
+
 // Template class
 public abstract class AssignmentTest {
     // Template method
-    public final void runTests(String targetPath) throws Exception {
-        loadClasses(targetPath);
-        compileClasses(targetPath);
-        runUnitTests(targetPath);
-        runIntegrationTests();
-        generateResults();
+    public final void runTests(Student student) throws Exception {
+        runUnitTests(student.getDestinationPath());
+        generateResults(student);
     }
 
-    protected abstract void loadClasses(String targetPath);
-    protected abstract void compileClasses(String targetPath);
+    protected abstract void generateResults(Student student);
     protected abstract void runUnitTests(String targetPath);
-    protected abstract void runIntegrationTests();
-    protected abstract void generateResults();
+    
 }

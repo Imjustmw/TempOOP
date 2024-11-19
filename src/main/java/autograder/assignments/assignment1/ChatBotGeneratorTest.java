@@ -35,9 +35,9 @@ public class ChatBotGeneratorTest extends ClassTest{
     
             // Test if the method is static
             if (Modifier.isStatic(modifiers)) {
-                feedback += "generateChatBotLLM should not be static\n";
-            } else {
                 methodTests.addScore(1);
+            } else {
+                feedback += "generateChatBotLLM should be static\n";
             }
     
             // Individual test cases for different inputs

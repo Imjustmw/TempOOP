@@ -1,37 +1,26 @@
 package autograder;
 
-import autograder.utils.FileCompiler;
-import autograder.utils.FileExtractor;
+import autograder.strategy.FileCompilationStrategy;
+import autograder.strategy.FileExtractionStrategy;
+import autograder.strategy.TestExecutionStrategy;
+
 
 public class App 
 {
     public static void main( String[] args ) {
-        String zipFilePath = "C:\\Users\\jonny\\Downloads\\OOPTEST\\Zips\\816024135_A1.zip";
-        String targetDirectory = "C:\\Users\\jonny\\Downloads\\OOPTEST\\Extracted\\Matthew";
-        String compiledDirectory = targetDirectory;
+        String zipFilePath = "C:\\Users\\jonny\\Downloads\\OOPTEST\\Zips";
+        String targetDirectory = "C:\\Users\\jonny\\Downloads\\OOPTEST\\Extracted";
+
+        GradingContext context = new GradingContext();
 
         try {
+            // Add strategies in order
+            context.addStrategy(new FileExtractionStrategy());
+            context.addStrategy(new FileCompilationStrategy());
+            context.addStrategy(new TestExecutionStrategy());
 
-            // Extract ZIP file
-            System.out.println("Extracting ZIP...");
-            FileExtractor.extractZip(zipFilePath, targetDirectory);
-
-            // Step 2: Compile Extracted Files
-            System.out.println("Compiling Java files...");
-            boolean success = FileCompiler.compileJavaFiles(targetDirectory);
-            if (!success) {
-                System.err.println("Compilation failed!");
-                return;
-            }
-
-            // Step 3: Locate Compiled Classes
-            System.out.println("Compiled classes are in: " + compiledDirectory);
-            
-
-            // Step 4: Run Tests on Compiled classes
-            AssignmentTest a1 = AssignmentTestFactory.getAssignmentTest("A1");
-            a1.runTests(compiledDirectory);
-
+            // Execute all strategies
+            context.executeStrategies(zipFilePath, targetDirectory);
         } catch (Exception e) {
             e.printStackTrace();
         }
