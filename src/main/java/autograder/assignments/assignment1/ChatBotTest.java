@@ -5,7 +5,9 @@ import autograder.models.TestResult;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.lang.reflect.Modifier;;
+import java.lang.reflect.Modifier;
+
+import com.itextpdf.text.pdf.PdfStructTreeController.returnType;;
 
 // Test ChatBot Class
 public class ChatBotTest extends ClassTest {
@@ -15,14 +17,16 @@ public class ChatBotTest extends ClassTest {
     }
 
     @Override
-    public void run() {
+    public boolean run() {
         try {
             testChatBotConstructor();
             testAttributes();
             testGetters();
             testMethods();
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
     }
 

@@ -13,11 +13,13 @@ public class ChatBotGeneratorTest extends ClassTest{
     }
 
     @Override
-    public void run() {
+    public boolean run() {
         try {
             testMethods();
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
     }
     
@@ -113,7 +115,5 @@ public class ChatBotGeneratorTest extends ClassTest{
             methodTests.setFeedback(feedback);
             super.tests.add(methodTests);
         }
-    }
-    
-    
+    }   
 }

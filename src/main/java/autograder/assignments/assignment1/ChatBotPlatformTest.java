@@ -14,13 +14,15 @@ public class ChatBotPlatformTest extends ClassTest {
     }
 
     @Override
-    public void run() {
+    public boolean run() {
         try {
             testChatBotPlatformConstructor();
             testGetters();
             testMethods();
+            return true;
         } catch (Exception e) {
             e.printStackTrace();
+            return false;
         }
     }
 

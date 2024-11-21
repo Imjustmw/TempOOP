@@ -1,10 +1,10 @@
 package autograder.assignments.assignment1;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
 import java.io.PrintStream;
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import java.util.List;
 
 import autograder.models.ClassTest;
 import autograder.models.TestResult;
@@ -16,13 +16,16 @@ public class ChatBotSimulationTest extends ClassTest {
     }
 
     @Override
-    public void run() {
+    public boolean run() {
         TestResult testResult = new TestResult("ChatBotSimulation");
         String feedback = "";
     
         // Capture console output for validation
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PrintStream originalOut = System.out;
+        InputStream originalIn = System.in;
+        String simulatedInput = "hey\nhey\nhey\nhey\nhey\nhey\nhey\nhey\nhey\nhey\nhey\nhey\nhey\nhey\nhey\nhey\nhey";
+        System.setIn(new ByteArrayInputStream(simulatedInput.getBytes()));
         System.setOut(new PrintStream(outputStream));
     
         try {
@@ -88,9 +91,9 @@ public class ChatBotSimulationTest extends ClassTest {
         } finally {
             testResult.setFeedback(feedback);
             super.tests.add(testResult);
-    
+            System.setIn(originalIn);
             System.setOut(originalOut);  // Restore the original output stream
         }
+        return true;
     }
-    
 }

@@ -11,14 +11,18 @@ public abstract class ClassTest {
     protected Class<?> classInstance;
     protected List<TestResult> tests;
     private int totalScore;
+    private String className;
 
     public ClassTest(String filePath, String className, int totalScore) {
         this.classInstance = ClassLoader.loadClass(filePath, className);
+        this.className = className;
         this.tests = new ArrayList<>();
         this.totalScore = totalScore;
     }
 
-    public abstract void run();
+    public Class<?> getClassInstance() {return this.classInstance;}
+
+    public abstract boolean run();
 
     protected boolean assertEquals(String message, Object expected, Object actual) {
         if (expected == null && actual == null) {
@@ -40,6 +44,21 @@ public abstract class ClassTest {
             if (!result.getFeedback().isEmpty())
                 System.out.print(result.getTestName() + ": " + result.getFeedback());
         }
-        
+    }
+
+    public TestResult getResults() {
+        int score = 0;
+        String feedback = "";
+        for (TestResult result: tests) {
+            score += result.getScore();
+            if (!result.getFeedback().isEmpty())
+                feedback += result.getTestName() + ":\n" + result.getFeedback() + "\n";
+        }
+
+        TestResult total = new TestResult(this.className);
+        total.setFeedback(feedback);
+        total.addScore(score);
+
+        return total;
     }
 }

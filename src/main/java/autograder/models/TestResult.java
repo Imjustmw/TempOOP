@@ -8,6 +8,7 @@ public class TestResult {
     public TestResult(String testName) {
         this.testName = testName;
         this.score = 0;
+        this.feedback = "";
     }
 
     public void setTestName(String testName) { this.testName = testName; }
